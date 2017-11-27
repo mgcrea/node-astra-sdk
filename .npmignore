@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+node_modules/
+build/
+bundle/
+data/
+profile_openni_sensor.txt
+profile_orbbec_hand.txt
+astra.log
+yarn.lock
+package-lock.json
