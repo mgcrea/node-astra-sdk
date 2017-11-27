@@ -1,28 +1,32 @@
 {
   "targets": [{
     "target_name": "addon",
-    "sources": [
-      "src/addon.cc",
-      "src/addon/astra.cc",
-      "src/addon/stream_reader.cc"
-    ],
     "include_dirs": [
       "<!(node -e \"require('nan')\")"
     ],
     "conditions": [
       ["OS=='linux'", {
+        "sources": [
+          "src/addon.cc",
+          "src/openni/openni.cc",
+          "src/openni/stream_reader.cc"
+        ],
         "cflags": [
-          "<!@(pkg-config --cflags opencv Qt5Core)"
+          "-I<!@(pwd)/bundle/OpenNI/Include"
         ],
         "ldflags": [
-          "<!@(pkg-config --libs-only-L --libs-only-other opencv Qt5Core)"
+          "-L<!@(pwd)/bundle/OpenNI/Redist"
         ],
         "libraries": [
-          "-lopenbr",
-          "<!@(pkg-config --libs-only-l opencv Qt5Core)"
+          "-lOpenNI2"
         ]
       }],
       ["OS=='mac'", {
+        "sources": [
+          "src/addon.cc",
+          "src/astra/astra.cc",
+          "src/astra/stream_reader.cc"
+        ],
         "xcode_settings": {
           "OTHER_CFLAGS": [
             "-I<!@(pwd)/bundle/AstraSDK/include"

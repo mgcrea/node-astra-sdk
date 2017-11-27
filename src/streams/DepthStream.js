@@ -27,7 +27,6 @@ export default class DepthStream extends Readable {
   close(callback = () => {}) {
     this.state.source.close(callback);
   }
-  throttledPush = throttle
   _read() {
     const {isReady, source} = this.state;
     const {frequency, timeout} = this.options;

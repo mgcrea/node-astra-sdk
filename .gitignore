@@ -10,3 +10,4 @@ profile_orbbec_hand.txt
 astra.log
 yarn.lock
 package-lock.json
+.remote-sync.json
