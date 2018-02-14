@@ -12,10 +12,10 @@
           "src/openni/stream_reader.cc"
         ],
         "cflags": [
-          "-I<!@(pwd)/bundle/OpenNI/Include"
+          "-I<!@(pwd)/bundle/OpenNI-linux-x64/Include"
         ],
         "ldflags": [
-          "-L<!@(pwd)/bundle/OpenNI/Redist"
+          "-L<!@(pwd)/bundle/OpenNI-linux-x64/Redist"
         ],
         "libraries": [
           "-lOpenNI2"
@@ -29,11 +29,11 @@
         ],
         "xcode_settings": {
           "OTHER_CFLAGS": [
-            "-I<!@(pwd)/bundle/AstraSDK/include"
+            "-I<!@(pwd)/bundle/AstraSDK-darwin-x64/include"
           ],
           "OTHER_LDFLAGS": [
             "-Wl,-bind_at_load",
-            "-L<!@(pwd)/bundle/AstraSDK/lib"
+            "-L<!@(pwd)/bundle/AstraSDK-darwin-x64/lib"
           ],
           "GCC_ENABLE_CPP_RTTI": "YES",
           "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
